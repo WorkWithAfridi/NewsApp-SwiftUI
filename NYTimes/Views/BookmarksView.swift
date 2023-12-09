@@ -2,6 +2,8 @@ import SwiftUI
 import CoreData
 
 struct BookmarksView: View {
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
     
     @Environment(\.managedObjectContext) var managedObjectContext
     
@@ -22,7 +24,7 @@ struct BookmarksView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .navigationBarItems(trailing: EditButton())
-            .navigationBarTitle("Bookmarks", displayMode: .automatic)
+            .navigationBarTitle("bookmarks".localized(language), displayMode: .automatic)
             .onAppear {
                 self.bookmarkViewModel.repository = BookmarkRepository(context: self.managedObjectContext)
             }

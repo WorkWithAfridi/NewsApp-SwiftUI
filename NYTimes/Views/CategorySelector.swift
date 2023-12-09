@@ -4,6 +4,9 @@ struct CategorySelector: View {
     
     @EnvironmentObject var categoriesViewModel: CategoriesViewModel
     @EnvironmentObject var articleViewModel: ArticleViewModel
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+
 
     
     var body: some View {
@@ -13,7 +16,7 @@ struct CategorySelector: View {
                         VStack{
                             Spacer()
                             HStack {
-                                Text(category.rawValue)
+                                Text("\(category.rawValue)".localized(language))
                                     .foregroundColor(categoriesViewModel.selectedCategory == category ? .white : .init(UIColor.label))
                                     .fontWeight(.medium)
                             }
@@ -27,8 +30,8 @@ struct CategorySelector: View {
                                 categoriesViewModel.selectedCategory = category
                                 articleViewModel.loadArticles(for: category)
                         }
-                    }.padding(.leading,8)
-                }
+                    }
+                }.padding(.horizontal, 15)
             }
             .padding(.vertical,24)
             .background(Color.init(.secondarySystemBackground))

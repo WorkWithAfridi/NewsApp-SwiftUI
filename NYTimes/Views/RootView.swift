@@ -102,6 +102,9 @@ struct RootView: View {
 
 
 struct ArticleListView: View {
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+
     
     @ObservedObject var articlesViewModel: ArticleViewModel
     @ObservedObject var bookmarkViewModel: BookmarkViewModel
@@ -115,7 +118,7 @@ struct ArticleListView: View {
                             Button(action: {
                                 bookmarkViewModel.bookmark(for: article)
                             }) {
-                                Text("Bookmark")
+                                Text("bookmarks".localized(language))
                                 Image(uiImage:UIImage(systemName:"bookmark")!)
                             }
                             .alert(isPresented: $bookmarkViewModel.shouldShowAlert) {

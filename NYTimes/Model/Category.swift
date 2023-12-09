@@ -2,13 +2,13 @@ import Foundation
 
 enum Category: String, CaseIterable {
     
-    case tech = "Tech"
-    case science = "Science"
-    case business = "Business"
-    case yourmoney = "Your Money"
-    case education = "Education"
-    case sports = "Sports"
-    case space = "Space"
+    case tech = "tech"
+    case science = "science"
+    case business = "business"
+    case yourmoney = "your_money"
+    case education = "education"
+    case sports = "sports"
+    case space = "space"
     
     var url: String {
         switch self {

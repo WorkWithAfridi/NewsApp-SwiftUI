@@ -1,1 +1,17 @@
 
+"locale" = "Gebietsschema";
+"app_language" = "App-Sprache";
+"settings" = "Einstellungen";
+"bookmarks" = "Lesezeichen";
+"categories" = "Kategorien";
+"tech"="Technik";
+"science"="Wissenschaft";
+"business"="Geschäft";
+"your_money"="Dein Geld";
+"education"="Ausbildung";
+"sports"="Sport";
+"space"="Raum";
+"my_categories"="Meine Kategorien";
+"edit" = "Bearbeiten";
+"added_to_bookmarks" = "Zu den Lesezeichen hinzugefügt";
+"removed_to_bookmarks" = "Zu den Lesezeichen entfernt";

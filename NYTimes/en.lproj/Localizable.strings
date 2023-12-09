@@ -1,1 +1,19 @@
 
+"locale" = "Locale";
+"app_language" = "App Language";
+"settings" = "Settings";
+"bookmarks" = "Bookmarks";
+"categories" = "Categories";
+"tech"="Tech";
+"science"="Science";
+"business"="Business";
+"your_money"="Your Money";
+"education"="Education";
+"sports"="Sports";
+"space"="Space";
+"my_categories"="My Category";
+"edit" = "Edit";
+"added_to_bookmarks" = "Added to Bookmarks";
+"removed_to_bookmarks" = "Removed from Bookmarks";
+
+
