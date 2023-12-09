@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
     @AppStorage("language")
     private var language = LocalizationService.shared.language
+    
     var body: some View {
         NavigationView {
             Form {

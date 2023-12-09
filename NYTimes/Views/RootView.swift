@@ -81,8 +81,7 @@ struct RootView: View {
 
             if articlesViewModel.isArticlesLoading {
                 VStack{
-                    Spacer()
-                    ForEach(0..<3) { i in
+                    ForEach(0..<4) { i in
                         NewsFeedView(article: .placeholder)
                     }.redacted(reason: .placeholder)
                     Spacer()

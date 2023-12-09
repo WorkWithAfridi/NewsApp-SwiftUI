@@ -6,6 +6,10 @@ struct WebViewHolder: View {
     var url:URL
     var article:Article
     
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+
+    
     @State var isBookmarked = false
     
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -21,7 +25,7 @@ struct WebViewHolder: View {
             Image(systemName: "bookmark\(isBookmarked ? ".fill" : "")").frame(width: 30, height: 50,alignment: .center)
         }).alert(isPresented: $bookmarkViewModel.shouldShowAlert) {
             Alert(
-                title: Text(bookmarkViewModel.message),
+                title: Text("\(bookmarkViewModel.message)".localized(language)),
                 dismissButton: .default(Text("OK"))
             )
         })

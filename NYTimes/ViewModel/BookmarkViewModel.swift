@@ -71,11 +71,11 @@ class BookmarkViewModel:ObservableObject {
     
     private func showAlertForAddedBookmark(success:Bool){
         self.shouldShowAlert = true
-        self.message = success ? "Added to Bookmarks" : "Error Bookmarking this article"
+        self.message = success ? "added_to_bookmarks" : "Error Bookmarking this article"
     }
     
     private func showAlertForDeletedBookmark(success:Bool){
         self.shouldShowAlert = true
-        self.message = success ? "Removed from bookmarks" : "Error deleting this article from bookmarks"
+        self.message = success ? "removed_to_bookmarks" : "Error deleting this article from bookmarks"
     }
 }
