@@ -1,11 +1,3 @@
-//
-//  CategoriesView.swift
-//  NYTimes
-//
-//  Created by Sameer Nawaz on 09/10/21.
-//  Copyright © 2021 Waseem Akram. All rights reserved.
-//
-
 import SwiftUI
 
 struct CategoriesView: View {

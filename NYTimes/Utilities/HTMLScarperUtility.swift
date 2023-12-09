@@ -1,10 +1,3 @@
-//
-//  HTMLScarpingUtility.swift
-//  NYTimes
-//
-//  Created by Waseem Akram on 04/08/20.
-//  Copyright © 2020 Waseem Akram. All rights reserved.
-//
 
 import Foundation
 import SwiftSoup

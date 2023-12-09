@@ -37,8 +37,6 @@
 		75D4FB5325653D7F0095AC82 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 75D4FB5225653D7F0095AC82 /* Reachability */; };
 		75D4FB5725653DC30095AC82 /* Reachability + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4FB5625653DC30095AC82 /* Reachability + Extensions.swift */; };
 		75D4FB5B256542B00095AC82 /* NetworkReachabilty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4FB5A256542B00095AC82 /* NetworkReachabilty.swift */; };
-		75DDE51824D4097400F9F165 /* NYTimesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDE51724D4097400F9F165 /* NYTimesTests.swift */; };
-		75DDE51C24D40DDD00F9F165 /* ArticleRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDE51B24D40DDD00F9F165 /* ArticleRepositoryTest.swift */; };
 		75F6869924D19C5C003E0E4A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 75F6869824D19C5C003E0E4A /* Kingfisher */; };
 		75F6869B24D19C5C003E0E4A /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 75F6869A24D19C5C003E0E4A /* KingfisherSwiftUI */; };
 /* End PBXBuildFile section */
@@ -98,9 +96,6 @@
 		75D4FB5625653DC30095AC82 /* Reachability + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reachability + Extensions.swift"; sourceTree = "<group>"; };
 		75D4FB5A256542B00095AC82 /* NetworkReachabilty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachabilty.swift; sourceTree = "<group>"; };
 		75DDE50D24D4094F00F9F165 /* NYTimesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTimesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		75DDE51724D4097400F9F165 /* NYTimesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYTimesTests.swift; sourceTree = "<group>"; };
-		75DDE51924D4098600F9F165 /* NYTimesTestInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NYTimesTestInfo.plist; sourceTree = "<group>"; };
-		75DDE51B24D40DDD00F9F165 /* ArticleRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRepositoryTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				7557FA7924D0271400F80607 /* NYTimes */,
-				75DDE50E24D4094F00F9F165 /* NYTimesTests */,
 				7557FA7824D0271400F80607 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -273,16 +267,6 @@
 				75D4FB5625653DC30095AC82 /* Reachability + Extensions.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		75DDE50E24D4094F00F9F165 /* NYTimesTests */ = {
-			isa = PBXGroup;
-			children = (
-				75DDE51924D4098600F9F165 /* NYTimesTestInfo.plist */,
-				75DDE51724D4097400F9F165 /* NYTimesTests.swift */,
-				75DDE51B24D40DDD00F9F165 /* ArticleRepositoryTest.swift */,
-			);
-			path = NYTimesTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,8 +414,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75DDE51C24D40DDD00F9F165 /* ArticleRepositoryTest.swift in Sources */,
-				75DDE51824D4097400F9F165 /* NYTimesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

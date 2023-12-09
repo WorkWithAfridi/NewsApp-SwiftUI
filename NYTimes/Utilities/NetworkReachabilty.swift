@@ -1,10 +1,3 @@
-//
-//  NetworkReachabilty.swift
-//  NYTimes
-//
-//  Created by Waseem Akram on 18/11/20.
-//  Copyright © 2020 Waseem Akram. All rights reserved.
-//
 
 import Foundation
 import Combine
