@@ -76,7 +76,7 @@ struct RootView: View {
     fileprivate func ArticleView() -> some View {
         return VStack {
             NavigationLink(destination: BookmarksView(), isActive: $shouldShowBookmarks) {}
-            NavigationLink(destination: CategoriesView().environmentObject(categoriesViewModel), isActive: $openCategories) {}
+            NavigationLink(destination: SettingsView(), isActive: $showSettings) {}
             NavigationLink(destination: CategoriesView().environmentObject(categoriesViewModel), isActive: $openCategories) {}
 
             if articlesViewModel.isArticlesLoading {

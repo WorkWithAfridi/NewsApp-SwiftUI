@@ -40,8 +40,10 @@
 		75F6869924D19C5C003E0E4A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 75F6869824D19C5C003E0E4A /* Kingfisher */; };
 		75F6869B24D19C5C003E0E4A /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 75F6869A24D19C5C003E0E4A /* KingfisherSwiftUI */; };
 		EF5F382C2B24A77600C1BF5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF5F382E2B24A77600C1BF5A /* Localizable.strings */; };
-		EF5F38312B24A7D500C1BF5A /* I10n in Resources */ = {isa = PBXBuildFile; fileRef = EF5F38302B24A7D500C1BF5A /* I10n */; };
 		EF5F38332B24AD5B00C1BF5A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5F38322B24AD5B00C1BF5A /* SettingsView.swift */; };
+		EF5F38382B24B16800C1BF5A /* LanguageEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5F38372B24B16800C1BF5A /* LanguageEnums.swift */; };
+		EF5F383A2B24B18C00C1BF5A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5F38392B24B18C00C1BF5A /* StringExtensions.swift */; };
+		EF5F383C2B24B1A600C1BF5A /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5F383B2B24B1A600C1BF5A /* LocalizationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -91,8 +93,10 @@
 		EF5F382B2B24A77000C1BF5A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		EF5F382D2B24A77600C1BF5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EF5F382F2B24A77700C1BF5A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		EF5F38302B24A7D500C1BF5A /* I10n */ = {isa = PBXFileReference; lastKnownFileType = folder; path = I10n; sourceTree = "<group>"; };
 		EF5F38322B24AD5B00C1BF5A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EF5F38372B24B16800C1BF5A /* LanguageEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageEnums.swift; sourceTree = "<group>"; };
+		EF5F38392B24B18C00C1BF5A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		EF5F383B2B24B1A600C1BF5A /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +152,7 @@
 		7557FA7924D0271400F80607 /* NYTimes */ = {
 			isa = PBXGroup;
 			children = (
-				EF5F38302B24A7D500C1BF5A /* I10n */,
+				EF5F38362B24B14A00C1BF5A /* LocalizationServices */,
 				EF5F382E2B24A77600C1BF5A /* Localizable.strings */,
 				75D4FB5525653DB40095AC82 /* Extensions */,
 				7533BB3324D9DFE200A4AF49 /* Utilities */,
@@ -261,6 +265,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EF5F38362B24B14A00C1BF5A /* LocalizationServices */ = {
+			isa = PBXGroup;
+			children = (
+				EF5F38372B24B16800C1BF5A /* LanguageEnums.swift */,
+				EF5F38392B24B18C00C1BF5A /* StringExtensions.swift */,
+				EF5F383B2B24B1A600C1BF5A /* LocalizationService.swift */,
+			);
+			path = LocalizationServices;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -334,7 +348,6 @@
 			files = (
 				7557FA8A24D0271500F80607 /* LaunchScreen.storyboard in Resources */,
 				EF5F382C2B24A77600C1BF5A /* Localizable.strings in Resources */,
-				EF5F38312B24A7D500C1BF5A /* I10n in Resources */,
 				7557FA8724D0271500F80607 /* Preview Assets.xcassets in Resources */,
 				7557FA8424D0271500F80607 /* Assets.xcassets in Resources */,
 			);
@@ -352,6 +365,7 @@
 				754C9A1D24D1500C00706469 /* Article.swift in Sources */,
 				75117C2424D43CE90097E28F /* BookmarkViewModel.swift in Sources */,
 				7557FA7B24D0271400F80607 /* AppDelegate.swift in Sources */,
+				EF5F383C2B24B1A600C1BF5A /* LocalizationService.swift in Sources */,
 				732DDA5E27125B650006F018 /* CategoriesView.swift in Sources */,
 				75C2758324D0AC2C00A7A651 /* ArticleViewModel.swift in Sources */,
 				75C2759B24D0BA6B00A7A651 /* Bookmark.swift in Sources */,
@@ -371,7 +385,9 @@
 				754FAFE724D0308900ACFE9E /* Category.swift in Sources */,
 				75C2759D24D0BB6C00A7A651 /* PersistenceManager.swift in Sources */,
 				732DDA6027125B6D0006F018 /* CategoriesViewModel.swift in Sources */,
+				EF5F383A2B24B18C00C1BF5A /* StringExtensions.swift in Sources */,
 				7533BB3724D9E00C00A4AF49 /* HTMLScarperUtility.swift in Sources */,
+				EF5F38382B24B16800C1BF5A /* LanguageEnums.swift in Sources */,
 				EF5F38332B24AD5B00C1BF5A /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
