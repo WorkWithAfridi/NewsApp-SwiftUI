@@ -9,11 +9,12 @@ struct RootView: View {
     @ObservedObject var bookmarkViewModel = BookmarkViewModel()
     @ObservedObject var networkReachability = NetworkReachabilty.shared
     @ObservedObject var categoriesViewModel = CategoriesViewModel()
-
+    
     @State var shouldShowBookmarks = false
+    @State var showSettings = false
     @State var openCategories = false
     @State var isLoaded = false
-
+    
     init() {
         articlesViewModel.loadArticles(for: categoriesViewModel.selectedCategory)
     }
@@ -50,25 +51,34 @@ struct RootView: View {
             articlesViewModel.loadArticles(for: categoriesViewModel.selectedCategory)
         }
     }
-
+    
     private var categoriesView: some View {
         Button(action: { openCategories = true }, label: {
-            Image(systemName: "square.stack.3d.up")
+            Image(systemName: "line.3.horizontal.decrease.circle")
                 .frame(width: 30, height: 50, alignment: .center)
         })
     }
-
+    
     private var bookmarksView: some View {
-        Button(action: { shouldShowBookmarks = true }, label: {
-            Image(systemName: "folder")
-                .frame(width: 30, height: 50, alignment: .center)
-        })
+        HStack {
+            Button(action: { shouldShowBookmarks = true }, label: {
+                Image(systemName: "books.vertical")
+                    .frame(width: 30, height: 50, alignment: .center)
+            })
+            Button(action: { showSettings = true }, label: {
+                Image(systemName: "gearshape")
+                    .frame(width: 30, height: 50, alignment: .center)
+            })
+            
+        }
     }
     
     fileprivate func ArticleView() -> some View {
         return VStack {
             NavigationLink(destination: BookmarksView(), isActive: $shouldShowBookmarks) {}
             NavigationLink(destination: CategoriesView().environmentObject(categoriesViewModel), isActive: $openCategories) {}
+            NavigationLink(destination: CategoriesView().environmentObject(categoriesViewModel), isActive: $openCategories) {}
+
             if articlesViewModel.isArticlesLoading {
                 VStack{
                     Spacer()
@@ -97,27 +107,28 @@ struct ArticleListView: View {
     @ObservedObject var bookmarkViewModel: BookmarkViewModel
     
     var body: some View {
-        List(articlesViewModel.articles, id: \.id){ article in
-            NavigationLink(destination: WebViewHolder(url: URL(string: article.url)!, article: article)){
-                NewsFeedView(article: article)
-                    .contextMenu(menuItems: {
-                        Button(action: {
-                            bookmarkViewModel.bookmark(for: article)
-                        }) {
-                            Text("Bookmark")
-                            Image(uiImage:UIImage(systemName:"bookmark")!)
-                        }
-                        .alert(isPresented: $bookmarkViewModel.shouldShowAlert) {
-                            return Alert(
-                                title: Text(bookmarkViewModel.message),
-                                dismissButton: .default(Text("OK"))
-                            )
-                        }
-                    })
+        ScrollView {
+            ForEach(articlesViewModel.articles,id: \.id) { article in
+                NavigationLink(destination: WebViewHolder(url: URL(string: article.url)!, article: article)){
+                    NewsFeedView(article: article)
+                        .contextMenu(menuItems: {
+                            Button(action: {
+                                bookmarkViewModel.bookmark(for: article)
+                            }) {
+                                Text("Bookmark")
+                                Image(uiImage:UIImage(systemName:"bookmark")!)
+                            }
+                            .alert(isPresented: $bookmarkViewModel.shouldShowAlert) {
+                                return Alert(
+                                    title: Text(bookmarkViewModel.message),
+                                    dismissButton: .default(Text("OK"))
+                                )
+                            }
+                        })
+                }
             }
+            
         }
-        .listStyle(InsetGroupedListStyle())
-        .padding(.bottom, -8)
     }
 }
 

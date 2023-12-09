@@ -6,7 +6,7 @@ struct NewsFeedView: View {
     var article:Article
     
     var body: some View {
-        HStack {
+        HStack(spacing: 15) {
             KFImage(URL(string: article.imageUrl)!)
                 .placeholder({
                     ProgressView()
@@ -20,7 +20,7 @@ struct NewsFeedView: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 Text(article.title)
-                    
+                
                     .font(.headline)
                     .lineLimit(2)
                 
@@ -28,13 +28,14 @@ struct NewsFeedView: View {
                     .font(.subheadline)
                     .opacity(0.7)
                     .lineLimit(2)
-                
                 Text(article.author)
                     .font(.system(size: 13, weight: .medium, design: .rounded))
                     .multilineTextAlignment(.leading)
-            }.padding(.horizontal, 12)
+            }
+            .multilineTextAlignment(.leading)
+
         }
-        .padding(12)
+        .padding(.horizontal,12)
     }
 }
 
@@ -47,8 +48,5 @@ struct NewsFeedView_Previews: PreviewProvider {
             subtitle: "Jezero crater, the destination of the Perseverance rover, is a promising place to look for evidence of extinct Martian life.",
             author: "KENNETH CHANG"
         ))
-        //            .previewDevice(.init(stringLiteral: "iPhone X"))
-        //            .edgesIgnoringSafeArea(.all)
-        //            .environment(\.colorScheme, .dark)
     }
 }
